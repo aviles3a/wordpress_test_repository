@@ -6,9 +6,10 @@
 <?php
 
     if( have_posts() ){
-        if(is_home() && ! is_front_page()){
-            while( have_post() ){
+        if(is_home()){
+            while( have_posts() ){
                 the_post();
+                get_template_part('content');
             }
         }
     }else{
